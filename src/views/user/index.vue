@@ -30,7 +30,6 @@
 <script lang="ts">
 import { defineComponent, defineAsyncComponent } from "vue";
 import UserDataService from "@/services/UserDataService";
-import { IUser } from "@/types/index";
 import { QTableProps } from "quasar";
 
 export default defineComponent({
@@ -49,35 +48,35 @@ export default defineComponent({
                     required: true,
                     label: 'ID',
                     align: 'left',
-                    field: (row: IUser) => row.id,
+                    field: (row: any) => row.id,
                 },
                 {
                     name: 'first_name',
                     required: true,
                     label: 'First Name',
                     align: 'left',
-                    field: (row: IUser) => row.first_name,
+                    field: (row: any) => row.first_name,
                 },
                 {
                     name: 'last_name',
                     required: true,
                     label: 'Last Name',
                     align: 'left',
-                    field: (row: IUser) => row.last_name,
+                    field: (row: any) => row.last_name,
                 },
                 {
                     name: 'email',
                     required: true,
                     label: 'Email',
                     align: 'left',
-                    field: (row: IUser) => row.email,
+                    field: (row: any) => row.email,
                 },
                 {
                     name: 'avatar',
                     required: true,
                     label: 'Avatar',
                     align: 'center',
-                    field: (row: IUser) => row.avatar,
+                    field: (row: any) => row.avatar,
                 },
                 {
                     name: 'action',
@@ -94,8 +93,8 @@ export default defineComponent({
                 rowsNumber: 10,
             },
             loading: false,
-            currentId: null,
-            confirm: 0 as number
+            currentId: 0 as number,
+            confirm: false as boolean
         };
 	},
 	async mounted() {
@@ -105,9 +104,8 @@ export default defineComponent({
 	},
 	methods: {
         async fetchData(props: QTableProps) {
-            const { page, rowsPerPage } = props.pagination
             this.loading = true
-            const data: any = await UserDataService.list(page, rowsPerPage);
+            const data: any = await UserDataService.list(props.pagination?.page, props.pagination?.rowsPerPage);
             this.pagination = {
                 ...this.pagination,
                 page: data.page,

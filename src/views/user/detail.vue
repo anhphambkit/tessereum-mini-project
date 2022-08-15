@@ -35,11 +35,17 @@ export default defineComponent({
     },
 	data() {
 		return {
-            item: {},
+            item: {
+                first_name: "",
+                last_name: "",
+                email: "",
+                id: "",
+                avatar: ""
+            } as any,
             previousItem: {},
             loading: null,
             isActive: true,
-            id: parseInt(this.$route.params.id),
+            id: this.$route.params.id as string,
             confirm: false
         };
 	},
@@ -66,8 +72,11 @@ export default defineComponent({
         ...mapActions(useStore, ['updateLoading']),
         async fetchData() {
             this.updateLoading(true)
-            const data: any = await UserDataService.detail(this.id);
-			this.item = data.data
+            const userId = parseInt(this.id)
+            const data: any = await UserDataService.detail(userId);
+			this.item = {
+                ...data.data
+            }
             this.previousItem = {
                 ...this.item
             }
@@ -81,7 +90,7 @@ export default defineComponent({
                 // avatar: this.item.avatar,
                 email: this.item.email,
             }
-            await UserDataService.update(this.id, dataUpdate);
+            await UserDataService.update(parseInt(this.id), dataUpdate);
             this.fetchData()
             this.updateLoading(false)
             showNotify({

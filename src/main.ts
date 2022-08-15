@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
-import { Quasar } from 'quasar'
+import { createPinia } from 'pinia'
+import { Quasar, Loading, Notify } from 'quasar'
 import router from "@/router";
 
 // Import icon libraries
@@ -12,10 +13,22 @@ import 'quasar/src/css/index.sass'
 // and placed in same folder as main.js
 import App from './App.vue'
 
+const pinia = createPinia()
 const myApp = createApp(App)
 
+myApp.use(pinia)
+
 myApp.use(Quasar, {
-  plugins: {}, // import Quasar plugins and add here
+  plugins: {
+    Loading,
+    Notify
+  },
+  config: {
+    loading: { /* look at QuasarConfOptions from the API card */ },
+    notify: { /* look at QuasarConfOptions from the API card */ 
+      position: "top-right"
+    }
+  }
 })
 
 myApp.use(router)

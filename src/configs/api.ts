@@ -9,8 +9,8 @@ interface IApiCRUD {
 // Users
 const userApi: IApiCRUD = {
     LIST: "/users",
-    CREATE: "/us",
-    DETAIL: "/user/detail",
+    CREATE: "/users",
+    DETAIL: "/users",
     UPDATE: "/users",
     DELETE: "/users",
 }

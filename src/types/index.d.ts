@@ -1,6 +1,7 @@
-// 基础
 export interface IUser {
-  name: string
-  job: string
-  updatedAt: string
+  // id: number,
+  first_name: string
+  last_name: string
+  avatar: string,
+  email: string,
 }

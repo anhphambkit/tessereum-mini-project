@@ -1,0 +1,28 @@
+.custom-link {
+    text-decoration: none;
+}
+
+.detail-card {
+    width: 600px;
+    &__left {
+        width: 50%;
+    }
+    &__right {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 35em) {
+    .detail-card {
+        &__section {
+            flex-wrap: wrap;
+        }
+        &__left {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &__right {
+            width: 100%;
+        }
+    }
+}

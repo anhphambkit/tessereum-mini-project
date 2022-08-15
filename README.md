@@ -33,19 +33,19 @@ Local server:
 ## Screenshots
 <div align="center">
     <h4>List User Page</h4>
-    <img width=70% alt="home" src="https://github.com/anhphambkit/tessereum-mini-project/blob/main/docs/list.png">
+    <img width=70% alt="home" src="https://github.com/anhphambkit/tessereum-mini-project/blob/3027979512f36f958dfb633d2992c80c0deb1238/docs/list.png">
 </div>
 <div align="center">
     <h4>Detail page</h4>
-    <img src="https://github.com/anhphambkit/tessereum-mini-project/blob/main/docs/detail.png" width=70% />
+    <img src="https://github.com/anhphambkit/tessereum-mini-project/blob/3027979512f36f958dfb633d2992c80c0deb1238/docs/detail.png" width=70% />
 </div>
 <div align="center">
     <h4>Create page</h4>
-    <img src="https://github.com/anhphambkit/tessereum-mini-project/blob/main/docs/create.png" width=70% />
+    <img src="https://github.com/anhphambkit/tessereum-mini-project/blob/3027979512f36f958dfb633d2992c80c0deb1238/docs/create.png" width=70% />
 </div>
 <div align="center">
     <h4>Delete Confirm</h4>
-    <img src="https://github.com/anhphambkit/tessereum-mini-project/blob/main/docs/delete.png" width=70% />
+    <img src="https://github.com/anhphambkit/tessereum-mini-project/blob/3027979512f36f958dfb633d2992c80c0deb1238/docs/delete.png" width=70% />
 </div>
 
 ## Recommended IDE Setup
